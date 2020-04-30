@@ -14,6 +14,13 @@ public class Student implements Person {
     }
 
     @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
     public Person keepFit() {
         System.out.println(name + "最近有坚持健身");
         return this;

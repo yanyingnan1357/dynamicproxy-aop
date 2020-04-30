@@ -20,16 +20,21 @@ public class DynamicProxy {
 
                 Object result = method.invoke(zhangsan, args);
 
-                System.out.println(result);
+                System.out.println(result.toString());
 
                 System.out.println("之后可以做点啥.......");
 
+                //返回被代理对象
+                //return result;
+                //返回代理对象 这样下面的链式编程就可以每次都是代理对象执行了
                 return proxy;
+                //java.lang.ClassCastException: java.lang.String cannot be cast to com.ke.dynamicproxy.Person
+                //return "";
             }
         });
 
         //代理执行学习方法
-        stuProxy.study().keepFit();
+        stuProxy.study();
         //再增加执行代理方法只需要在这里调用即可，匿名内部类InvocationHandler不用做修改
 //        stuProxy.keepFit();
     }
